@@ -1,0 +1,24 @@
+<div class="container p-4">
+    <div class="row">
+
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+
+                <div class="card-body">
+                    <h3>Agregando existencias </h3><br>
+                    <h4>{{pc.comp_marca}} {{pc.comp_ref}} {{timeago created_at}}</h4>
+                    <img src="{{pc.image_url}}" alt="{{comp_marca}}"
+                        style="width:140px !important; height:140px !important">
+                        <h3>Existencias Actuales: {{pc.existencias}}</h3>
+                    <form action="/links/add_exist/{{pc.id}}" method="POST">
+                       <div class="form-group">
+                           <label for="existencias">Digite la cantidad a almacenar para este producto</label><br>
+                           <input type="text" name="existencias">
+                           <button type="submit" class="btn btn-danger">Guardar</button>
+                       </div>
+                    </form>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

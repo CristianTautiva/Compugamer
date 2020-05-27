@@ -1,0 +1,89 @@
+<div class="container p-4">
+  <div class="row">
+    {{#if user}}
+       {{#if user.clie_privilegiado}}
+        {{#each pc}}
+         <div class="col-md-3">
+             <div class="card text-center">
+                 <div class="card-body">
+                     <a href="#">
+                     <h3 class="card-title text-uppercase">
+                         {{comp_marca}}
+                     </h3>
+                     </a>
+                     <h3 class="card-title text-uppercase">
+                         {{comp_ref}}
+                     </h3>
+                    <img src="{{image_url}}" alt="{{comp_marca}}" style="width:140px !important; height:140px !important">
+                     <p class="m-2">{{comp_proc}}</p>
+                     <p class="m-2">{{comp_ram}}</p>
+                     <p class="m-2">{{comp_alm}}</p>
+                     <p class="m-2">Existencias actuales: <br>{{ existencias }}</p>
+                     <p>{{timeago created_at}}</p>
+                     <a href="/links/add_exist/{{id}}" class="btn btn-primary">Agregar existencias</a>
+                     <a href="/links/edit/{{id}}" class="btn btn-secondary">Editar este PC</a>
+                     <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar este PC</a>
+                 </div>
+             </div>
+         </div>
+         {{else}}
+        <div class="col-md-4 mx-auto">
+          <div class="card card-body text-center">
+            <p>Ups! Parece que no hay Computadores en tu base de datos, agrega alguno</p>
+             <a href="/links/add" class="btn btn-primary">Agregar!</a>
+          </div>
+        </div>
+        {{/each}}
+        
+       {{else}}
+       <div class="col-md-12">
+         <div class="card text-center">
+                 <div class="card-body">
+    <h3 style="text-align: center;">Ultimos Agregados</h3>
+                 </div>
+         </div>
+       </div>
+    
+      {{#each pc}}
+        <div class="col-md-3">
+             <div class="card text-center">
+                 <div class="card-body">
+                     <a href="#">
+                     <h3 class="card-title text-uppercase">
+                         {{comp_marca}}
+                     </h3>
+                     </a>
+                     <h3 class="card-title text-uppercase">
+                         {{comp_ref}}
+                     </h3>
+                     <img src="{{image_url}}" alt="{{comp_marca}}" style="width:140px !important; height:140px !important">
+                     <p class="m-2">{{comp_proc}}</p>
+                     <p class="m-2">{{comp_ram}}</p>
+                     <p class="m-2">{{comp_alm}}</p>
+                     <p class="m-2">Existencias actuales: <br>{{ existencias }}</p>
+                     <p>{{timeago created_at}}</p>
+                     <a href="/links/interesting/{{id}}" class="btn btn-info">Me interesa</a>
+                     <a href="/ref_of_users/{{id}}" class="btn btn-dark">Referencias de usuarios</a>
+                     <a href="/add_ref/{{id}}" class="btn btn-success">Agregar mi Referencia</a>
+                 </div>
+                 
+             </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+          <div class="card card-body text-center">
+            <p>Ups! Parece que no hay Computadores recientes</p>
+          </div>
+        </div>
+         {{/each}}
+       {{/if}}
+    {{/if}}
+  </div>
+</div>
+<style type="text/css"> 
+body{ 
+    font-family: 'Oswald', sans-serif !important;
+    overflow: auto !important;
+}
+</style> 
+

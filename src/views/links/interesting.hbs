@@ -1,0 +1,31 @@
+ <div class="col-md-6 p-4 mx-auto">
+         <div class="card text-center">
+                 <div class="card-body">
+                     
+                     {{#each datos_user}}
+                     <img src="{{profile_img}}" style="border-radius: 50%; padding:2%" title="{{username}}" alt="{{username}}"
+                width="110px" height="110px"> <h2>{{clie_nomb}} {{clie_apell}}</h2>
+                      {{/each}}
+                      <br>
+          {{#each datos_pc}}
+    <h3 style="text-align: center;">Te interesa el computador : {{comp_marca}} {{comp_ref}}</h3>
+    <img src="{{image_url}}" alt="{{comp_marca}}"
+                        style="width:140px !important; height:140px !important"><br>
+
+                        <form action="/links/interesting/{{id}}" method="post">
+                        <h4>Redactando mensaje: </h4><br>
+                        <textarea name="mensaje" id="" cols="70" rows="7">La presente es para informarles que me encuentro interesado en el computador {{comp_marca}} {{comp_ref}} agradeceria una pronta respuesta para ponernos de acuerdo con la compra. Gracias de antemano!
+                             </textarea><br>
+                             <button type="submit" class="btn  btn-success">Enviar Mensaje</button>
+                             </form>
+                             
+                             {{/each}}
+                 </div>
+         </div>
+       </div>
+       <style type="text/css">
+    body {
+        font-family: 'Oswald', sans-serif !important;
+        overflow: auto !important;
+    }
+</style>

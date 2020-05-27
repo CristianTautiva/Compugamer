@@ -1,0 +1,166 @@
+<div class="container p-4">
+    <div class="row">
+
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+
+                <div class="card-body">
+                    <h3>Editando </h3><br>
+                    <h4>{{pc.comp_marca}} {{pc.comp_ref}} {{timeago pc.created_at}}</h4>
+                    <img src="{{pc.image_url}}" alt="{{pc.comp_marca}}"
+                        style="width:140px !important; height:140px !important">
+                    <form action="/links/edit/{{pc.id}}" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <h5>Actualizar imagen del pc</h5><br>
+                            <div class="custom-file">
+                            <input type="file" name="img">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <Label>
+                                <h5>Seleccione el Tipo: </h5>
+                            </Label>
+                            
+                            <select name="tipo" required>
+                                <option value="1">Escritorio</option>
+                                <option value="2">Portatil</option>
+                                <option value="3">Todo en uno</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Seleccione la marca: </h5>
+                            </Label>
+                            
+                            <select name="marca" required>
+                                <option selected >{{pc.comp_marca}}</option>
+                                <option>Acer</option>
+                                <option>Asus</option>
+                                <option>HP</option>
+                                <option>Lenovo</option>
+                                <option>Compumax</option>
+                                <option>Dell</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Referencia: </h5>
+                            </Label>
+                            
+                            <input type="text" name="referencia" value="{{pc.comp_ref}}"  autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Procesador: </h5>
+                            </Label>
+                            
+                            <select name="procesador" required>
+                                <option selected >{{pc.comp_proc}}</option>
+                                <option>Intel Celeron</option>
+                                <option>Intel Pentium</option>
+                                <option>Intel Pentium Gold Series</option>
+                                <option>Intel Pentium Silver Series</option>
+                                <option>Intel Core i3</option>
+                                <option>Intel Core i5</option>
+                                <option>Intel Core i7</option>
+                                <option>Intel Core i9</option>
+                                <option>AMD A8</option>
+                                <option>AMD A9</option>
+                                <option>AMD A10</option>
+                                <option>AMD A12</option>
+                                <option>AMD RYZEN 3</option>
+                                <option>AMD RYZEN 5</option>
+                                <option>AMD RYZEN 7</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Memoria RAM: </h5>
+                            </Label>
+                           
+                            <select name="ram" required>
+                                <option selected >{{pc.comp_ram}}</option>
+                                <option>2GB DDR3</option>
+                                <option>4GB DDR3</option>
+                                <option>8GB DDR3</option>
+                                <option>4GB DDR4</option>
+                                <option>8GB DDR4</option>
+                                <option>16GB DDR4</option>
+                                <option>32GB DDR4</option>
+                                <option>64GB DDR4</option>
+                                <option>128GB DDR4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Almacenamiento: </h5>
+                            </Label>
+                            
+                            <select name="almacenamiento" required>
+                                <option selected >{{pc.comp_alm}}</option>
+                                <option>500GB HDD</option>
+                                <option>1000GB HDD</option>
+                                <option>2000GB HDD</option>
+                                <option>4000GB HDD</option>
+                                <option>128GB SSD</option>
+                                <option>240GB SSD</option>
+                                <option>256GB SSD</option>
+                                <option>480GB SSD</option>
+                                <option>512GB SSD</option>
+                                <option>1000GB SSD</option>
+                            
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Tarjeta Grafica: </h5>
+                            </Label>
+                            
+                            <select name="grafica" required>
+                                <option selected >{{pc.comp_vid}}</option>
+                                <option>Integrados Intel(Sin tarjeta de video dedicada)</option>
+                                <option>Nvidia Geforce GT 210</option>
+                                <option>Nvidia Geforce GT 710</option>
+                                <option>Nvidia Geforce GT 720</option>
+                                <option>Nvidia Geforce GT 740</option>
+                                <option>Nvidia Geforce GT 1030</option>
+                                <option>Nvidia Geforce GT 1050</option>
+                                <option>Nvidia Geforce GT 1050ti</option>
+                                <option>Nvidia Geforce GT 1060 (3GB)</option>
+                                <option>Nvidia Geforce GT 1060 (6GB)</option>
+                                <option>Nvidia Geforce GT 1070</option>
+                                <option>Nvidia Geforce GT 1080</option>
+                                <option>Nvidia Geforce GT 1080ti</option>
+                                <option>Nvidia Geforce GTX 1050</option> 
+                                <option>Amd RX 540</option>
+                                <option>Amd RX 560</option>
+                                <option>Amd RX 580</option>
+                                <option>Amd RX 5500</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <Label>
+                                <h5>Precio: </h5>
+                            </Label>
+                            <br>
+                            <input type="text" name="precio" id="">
+                        </div>
+                        <div class="form-group">
+                            
+                            <button class="btn btn-success btn-block">
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    body {
+        font-family: 'Oswald', sans-serif !important;
+        overflow: auto !important;
+    }
+</style>

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        
+                    <div class="demo p-4">
+                        <form class="form-search content-search navbar-form" action="/search_for_shopping"
+                            method="get">
+                            <div class="input-group">
+                                <input placeholder="Buscar" class="form-control form-text" type="search" name="dato"
+                                    size="30" maxlength="128" required />
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-success"><span
+                                            class="icon glyphicon glyphicon-search" aria-hidden="true"></span><i
+                                            class="fa fa-search fa-lg">&nbsp;</i></button>&nbsp;
+                                </span>
+                            </div>
+                        </form> 
+                    </div>
+                    <div class="p-4">
+                       <a href="/links/shopping_car" class="btn btn-danger p-2"  size="40"><i class="fas fa-shopping-cart"></i></a>
+                    </div> 
+                     <div class="p-4 mx-auto"> 
+      <a class="btn btn-warning" href="/links/limpiar_storage">Limpiar Carrito</a>&nbsp;
+        </div>   
+                    <table class="table table-responsive  table-hover d-flex justify-content-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo</th>
+                            <th>Referencia</th>
+                            <th>Marca</th>
+                            <th>Existencias</th>
+                            <th>Precio</th>
+                            <th>Operacion</th>
+                        </tr>
+                     {{#each pc}}
+                      <tr>
+                          <td>{{id}}</td>
+                          <td>{{comp_tipo}}</td>
+                          <td>{{comp_ref}}</td>
+                          <td>{{comp_marca}}</td>
+                          <td>{{existencias}}</td>
+                          <td>{{precio}}</td>
+                          <td><form action="/links/add_venta/{{id}}" method="get">
+                          <input class ="btn btn-primary" type="submit" id="{{id}}" value="Agregar a la venta">
+                          </form></td>
+                      </tr>
+
+                     {{/each}}
+                     </table>
+                
+    </div>
+</div>
+
+<style type="text/css"> 
+body{ 
+    
+    overflow: auto !important;
+}
+</style> 

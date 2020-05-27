@@ -1,0 +1,47 @@
+<div class="container p-4">
+    <div class="row"> 
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4>Actualizar</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/links/edit_data/{{myUser.id}}" method="post">
+                     <div class="form-group">
+                         <label for="name">Nombre </label><input type="text" name="name" value ="{{myUser.clie_nomb}}" class="form-control" autofocus>
+                     </div>
+                     <div class="form-group">
+                         <label for="secondname">Apellido </label><input type="text" name="secondname" value ="{{myUser.clie_apell}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="username">Username</label><input type="text" name="username" value ="{{myUser.username}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                         <label for="username">Telefono</label><input type="text" name="telefono" value ="{{myUser.clie_tel}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                         <label for="username">Direccion</label><input type="text" name="direccion" value ="{{myUser.clie_dir}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                         <label for="email">E-mail </label><input type="email" name="email" value ="{{myUser.email}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                         <label for="password">Contraseña</label><input type="password" name="password" value ="" class="form-control">
+                     </div>
+                     <div class="form-group">
+                         <button type="submit" class="btn btn-success btn-block">
+                             Actualizar Tus Datos
+                         </button>
+                     </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css"> 
+body{ 
+    font-family: 'Oswald', sans-serif !important;
+    overflow: auto !important;
+}
+</style> 

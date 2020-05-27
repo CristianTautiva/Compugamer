@@ -1,0 +1,31 @@
+<div class="container p-5">
+  <div class="row">
+    
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="mx-auto">
+                <div class="card-body">
+                  <div class="form-group ">
+                      <form action="/pdfmake/pdf" method="post">
+                            <Label><h5>Seleccione la persona encargada de la comision: </h5></Label><br>
+                            <select name="vendedor" required>
+                                {{#each vendedor}}
+                                <option>{{vend_nombre}}</option> 
+                                {{/each}}                       
+                            </select>
+                            <br>
+                            <br>
+                            <br>
+                             <div class="mx-auto"> 
+                                <button class="btn btn-block btn-primary">Generar Factura</button>
+                                <a class="btn btn-block btn-secondary" href="/links/shopping_car">Regresar</a>
+                                <a class="btn btn-block btn-success" href="/links/shopping_car">Confirmar Venta</a>
+                            </div>   
+                            </form>
+                        </div>
+                </div>
+       </div>
+    </div>
+</div>
+</div>
+</div>

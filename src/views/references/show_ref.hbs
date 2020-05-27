@@ -1,0 +1,56 @@
+<div class="container p-4">
+    <div class="row ">
+      
+      {{#each datos}}
+         <div class="col-md-12 p-4">
+         <div class="card text-center">
+                 <div class="card-body">
+    <h2 style="text-align: center;">Comentarios para: {{comp_marca}} {{comp_ref}}</h2>
+    <img src="{{image_url}}" alt="{{comp_marca}}"
+                        style="width:140px !important; height:140px !important">
+                 </div>
+         </div>
+       </div>
+     {{/each}}
+         
+    {{#if comment}}
+      <table class="table table-responsive  table-hover d-flex justify-content-center">
+                        <tr class="bg-primary">
+                            <th>Photo</th>
+                            <th>Nombre</th>
+                            <th>Referencia (Comentario)</th>
+                            <th>Fecha de publicacion</th>
+                        </tr>
+                         {{#each comment}}
+                           <tr>
+                          <td><img src="{{user_img}}" style="border-radius: 50%; padding:2%" title="{{username}}" alt="{{username}}"
+                width="40px" height="40px"></td>
+                           <td>{{username}}</td>
+                           <td>{{comentario}}</td>
+                           <td>{{timeago fecha}}</td>
+                           </tr>
+
+                         {{/each}}
+      </table>
+      {{else}}
+       {{#each datos}}
+      <div class="col-md-4 mx-auto">
+          <div class="p-4">
+          <div class="card card-body text-center">
+            <p>Ups! Parece que no hay comentarios aun, agrega uno ;)</p><br>
+            <a class = "btn btn-info" href="/add_ref/{{id}}">Agregar Tu Comentario Ahora</a>
+          </div>
+        </div>
+        </div>
+        {{/each}}
+
+      {{/if}}
+    
+    </div>
+</div>
+<style type="text/css">
+    body {
+        font-family: 'Oswald', sans-serif !important;
+        overflow: auto !important;
+    }
+</style>

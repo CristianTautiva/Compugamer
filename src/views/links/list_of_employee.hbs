@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+      <div class="mx-auto p-4">
+      <h2 style="text-align: center;">Lista de empleados</h2>
+      </div>
+<br>
+      <table class="table table-responsive  d-flex justify-content-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Telefono</th>
+                            <th>Cedula</th>
+                            <th>Operacion</th>
+                        </tr>
+                     {{#each employee}}
+                      <tr>
+                          <td>{{id}}</td>
+                          <td>{{vend_nombre}}</td>
+                          <td>{{vend_apell}}</td>
+                          <td>{{vend_tel}}</td>
+                          <td>{{vend_cedula}}</td>
+                          <td><form action="/links/delete_employee/{{id}}" method="post">
+                          <input class ="btn btn-danger" type="submit" id="{{id}}" value="Eliminar Empleado">
+                          </form></td>
+                      </tr>
+
+                     {{/each}}
+                     </table>
+                
+    </div>
+</div>
+
+<style type="text/css"> 
+body{ 
+    
+    overflow: auto !important;
+}
+</style> 
+  </div>
+</div>
